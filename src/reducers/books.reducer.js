@@ -5,7 +5,7 @@ export default function() {
       author: 'Zadie Smith'
     },
     {
-      title: 'Evicted'
+      title: 'Evicted',
       author: 'Matthew Desmond'
     },
     {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class BookList extends Component {
+class BookList extends Component {
     renderList() {
         return this.props.books.map((book) => {
             return (
@@ -19,3 +20,15 @@ export default class BookList extends Component {
         );
     }
 }
+
+//this function is the glue between React and Redux
+function mapStateToProps(state) {
+    //whaever is returned here is going to show up
+    //as props inside of BookList
+    return {
+        books: state.books
+    };
+}
+
+//connect takes two arguments; a function and a Component
+export default connect(mapStateToProps)(BookList);
